@@ -1,0 +1,17 @@
+/* #logo {} */
+
+body {
+    background-color: #ebeff5;
+}
+
+#total-students {
+    background-color: #2884c2;
+}
+
+#total-teachers {
+    background-color: #28b8c2;
+}
+
+#total-fees {
+    background-color: #28c2ae;
+}

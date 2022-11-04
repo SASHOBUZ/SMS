@@ -1,0 +1,54 @@
+{% extends 'sm/main.html' %}
+
+{% block content %}
+
+
+<br>
+<div class="col">
+    <div class="col-md">
+        <div class="card text-center text-black  mb-3" id="total-fees">
+            <div class="card-header">
+                <h4 class="card-title">Total Fees Collected</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">{{total_fees}} Tk</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md">
+        <h5>FEES DETAILS:</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="{% url 'add_fees' %}">Add New Fees</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Students</th>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+                {% for i in accounts %}
+                <tr>
+                    <td>{{i.student}}</td>
+                    <td>{{i.fee_type}}</td>
+                    <td>{{i.amount}}</td>
+
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td><b>Total Amount = </b></td>
+                    <td class="btn btn-sm btn-danger">
+                        <strong>{{total_fees}}.00 Tk</strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

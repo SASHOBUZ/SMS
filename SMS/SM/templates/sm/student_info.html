@@ -1,0 +1,38 @@
+{% extends 'sm/main.html' %}
+
+{% block content %}
+
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <h3>STUDENTS INFORMATION:</h3>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="{% url 'add_student' %}">Add New Students</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Students</th>
+                    <th>Phone</th>
+                    <th>Class</th>
+                    <th>Admission Date</th>
+                </tr>
+
+                {% for i in students %}
+
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.class_admitted}}</td>
+                    <td>{{i.date_admitted}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}
